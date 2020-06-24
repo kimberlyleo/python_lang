@@ -17,6 +17,10 @@ def floor_division(num):
     quotient_rounded_down = num//2
     return quotient_rounded_down
 
+assert 2 ** 3 == 8
+assert 6 % 2 == 0
+assert 7 % 2 != 0
+
 # Assignment Operators: =, +=, -=, *=, /=, //=, etc.
 def assignment_actions(num_input):
     num = num_input
@@ -40,6 +44,10 @@ def assignment_actions(num_input):
 # Comparison Operators: ==, !=, >, >=, <,<= used to create boolean value/ also referred to as bool operators
 assert 2 + 2 == 4 
     #assert is used to ensure that a comparison operation returns True (nothing will happen if True); if False an AsserionAError is raised
+assert True != False
+#comparison operators function the same way as they do in other languages 
+
+
 # Identity operators: 
     # in / not in : used to see if it is member or subtype of a given class 
     # is / is not ; used to evaluate if memorty location is the same; returns True/False
@@ -52,16 +60,16 @@ assert var1 is var2
 dance_count = [ 5, 6, 7 , 8]
 assert var1 in dance_count
 if "and" not in dance_count:
-    print(dance_count)
+    dance_count.append("and")
+    #print(dance_count)
 # can use 'in' or 'not in' to quickly check if something exists within a given list and return a boolean val
 
 
-# Built-in Mathematical Functions
+# Mathematical Functions
 # Integers and floats
 #examples showing python's built in number/float functions inc. type conversions 
 #https://www.tutorialspoint.com/python/python_numbers.htm
 assert int(3.0) == 3
-
 assert float(3) == 3.0
 assert complex(3.0) == (3 + 0j)
 assert complex(3.0, 3) == (3 + 3j)
@@ -69,8 +77,41 @@ assert complex(3.0, 3) == (3 + 3j)
     # complex() can take up to two arguments (real_number, imaginary_number) used for complex calcs that can be solved with numbers that are square roots of negative numbers
     # complex numbers are used in electric engineering
 
+assert abs(-1) == 1
+assert round(3.5) == 4
+assert round(3.4) == 3
+
+import math 
+assert math.floor(5.9) == 5
+assert math.ceil(3.2) == 4
+assert math.exp(2) == 7.38905609893065
+#math.exp(x) calculates e to the power of x; can be written as (e^x)
 
 
+# Lists
+
+list_of_animals = ["Gorilla" , "Panda", "Tarsier"]
+list_of_animals.append("Leopard Gecko")
+    #appends "Leopard Gecko" to the end of the list 
+    #append takes only one argument; argument can be a list but that list will be a single item on the outputted list
+
+second_list_of_animals = ["Fennec Fox", "Sonoran Desert Toad"]
+list_of_animals += second_list_of_animals 
+#print(list_of_animals)
+list_of_animals.sort()
+#print(list_of_animals)
+#sort mutates the list 
+
+#can use zip to pair list items by index position
+list1 = [1, 2, 3]
+list2 = ['pie' , 'ice cream', 'Irish Coffee']
+list3 = ['$3.20', '$2.00', '$4.20']
+menu_items = zip(list1, list2, list3)
+#print(menu_items) # >>> <zip object at mEmOrY_LoCaTiOn>
+#print(list(menu_items)) #>>> [(1, 'pie', '$3.20'), (2, 'ice cream', '$2.00'), (3, 'Irish Coffee', '$4.20')]
+# Caution* if (len(list1) != len(list2)) and (len(list3) != len(list1)): the unmatched list items are trimmed and no error is raised
+
+# Dictionary
 # Functions
 # illustrated with examples below
 
@@ -85,7 +126,7 @@ def submit_to_overlord_Goodburger():
 
 #submit_to_overlord_Goodburger()
 
-# loops
+# Loops
 
 def while_loop():
     while True:
