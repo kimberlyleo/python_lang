@@ -10,13 +10,14 @@
 # SYNTAX 
 # Language Basics: PYTHON is an interpretted (not compiled), object oriented, high level, language. their site also says it has dynamic semantics which means how the program's code is executed changes with new information... need to learn more about this and how it works!!
 
+
 # OPERATORS (will add bitwise operators)
-# arithmetic operators: +, -, *, /, %, **, // (floor division)
+# Arithmetic operators: +, -, *, /, %, **, // (floor division)
 def floor_division(num):
     quotient_rounded_down = num//2
     return quotient_rounded_down
 
-# Aassignment Operators: =, +=, -=, *=, /=, //=, etc.
+# Assignment Operators: =, +=, -=, *=, /=, //=, etc.
 def assignment_actions(num_input):
     num = num_input
     print(num) # >> 2
@@ -33,25 +34,45 @@ def assignment_actions(num_input):
     num -= num
     print(num) # >> 0.0
     
-    #notice that division operation always creates a float quotient (more on ints and floats next)
+    # * notice that division operation always creates a float quotient (more on ints and floats next)
 #assignment_actions(2)
 
+# Comparison Operators: ==, !=, >, >=, <,<= used to create boolean value/ also referred to as bool operators
+assert 2 + 2 == 4 
+    #assert is used to ensure that a comparison operation returns True (nothing will happen if True); if False an AsserionAError is raised
+# Identity operators: 
+    # in / not in : used to see if it is member or subtype of a given class 
+    # is / is not ; used to evaluate if memorty location is the same; returns True/False
+    # https://www.tutorialspoint.com/python3/python_basic_operators.htm
+var1 = 6
+var2 = 6
+assert var1 is 6
+assert var1 is var2
+
+dance_count = [ 5, 6, 7 , 8]
+assert var1 in dance_count
+if "and" not in dance_count:
+    print(dance_count)
+# can use 'in' or 'not in' to quickly check if something exists within a given list and return a boolean val
+
+
+# Built-in Mathematical Functions
 # Integers and floats
 #examples showing python's built in number/float functions inc. type conversions 
 #https://www.tutorialspoint.com/python/python_numbers.htm
 assert int(3.0) == 3
 
 assert float(3) == 3.0
+assert complex(3.0) == (3 + 0j)
+assert complex(3.0, 3) == (3 + 3j)
+    # a complex number is a real number plus an imaginary number (identififed by the j operator)
+    # complex() can take up to two arguments (real_number, imaginary_number) used for complex calcs that can be solved with numbers that are square roots of negative numbers
+    # complex numbers are used in electric engineering
 
 
-# comparison operators: ==, !=, >, >=, <,<= used to create boolean value/ also referred to as bool operators
-assert 2 + 2 == 4 
-    #assert is used to ensure that a comparison operation returns True (nothing will happen if True); if False an AsserionAError is raised
-# identity operators: in : used to see if it is member or subtype of a given class is / is not ; used to evaluate if identity is identical (same object occupying the same place in memory)
 
-
-# functions
-# illustrated with exapmples below
+# Functions
+# illustrated with examples below
 
 def dew_point_calc(temp_celsius, relative_humidity_percent):
     dew_point_temperature = temp_celsius - ((100 - relative_humidity_percent)/5)
