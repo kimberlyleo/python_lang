@@ -30,6 +30,44 @@ def while_loop():
 
 #print(while_loop())
 
+#for in looping 
+def catch_em_all(): 
+    pokemans = ["pikachu", "squirtle", "charzar", "bulbosaur"]
+    message = "My pokeball has: "
+    for pokemon in pokemans:
+        if pokemon == pokemans[-2]:
+            message += pokemon + ", and "
+        elif pokemon == pokemans[-1]:
+            message += pokemon
+        else:
+            message += pokemon + ", "
+    return message
+
+#print(catch_em_all())
+
+# for temporary_loop_variable in listName: above temp variable was pokemon which represents each value of the list pokemans 
+#this will print: My pokeball has: pikachu, squirtle, charzar, and bulbosaur
+#using if elif and else for grammatic structuring
+
+#double for in loop (can call a loop on a temporary varianble within scope) which is exemplified in /dictionary_loops.py
+
+
+#loops and operations on dictionaries:
+shop_inventory = { "sashes": 3, "feather boas": 22, "pairs go-go boots": 4, "kaleidoscope shades": 12}
+
+def operate_on_keys_only():
+    for item in shop_inventory:
+        print(item)
+#this will print keys ('feather boas', 'pairs go-go boot', 'kaleidoscope')
+
+def operate_on_keys_and_values():
+    for item, count in shop_inventory.items():
+        print("We have {} {}.".format(str(count), item))
+#here .items() is used on dictionary name to allow handling both keys and values in a function 
+
+#operate_on_keys_and_values() 
+
+
 def while_counter_runs():
     counter = 0
     while (counter < 5):
@@ -48,4 +86,4 @@ def list_loop(names):
         print("{}. {} ".format(cat_number, cat))
         cat_number += 1
 
-#list_loop(cat_names)
+#list_loop(cat_names)11
