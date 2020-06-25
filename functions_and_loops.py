@@ -62,21 +62,21 @@ def operate_on_keys_only():
 
 def operate_on_keys_and_values():
     for item, count in shop_inventory.items():
-        print("We have {} {}.".format(str(count), item))
+        print("We have {} {}.".format(count, item))
 #here .items() is used on dictionary name to allow handling both keys and values in a function 
 
-#operate_on_keys_and_values() 
+operate_on_keys_and_values() 
 
 
 def while_counter_runs():
     counter = 0
     while (counter < 5):
-        print("Counter value is {}".format(str(counter)))
+        print("Counter value is {}".format(counter))
         counter += 1
         #because the counter increases after print statement, counter values printed range from 0 to 4
         #if the counter increase was above print statement range printed would be 1 to 4
 
-# while_counter_runs()
+while_counter_runs()
 
 cat_names = ["Fyodor", "Reggie", "Socks", "Yarnell"]
 
@@ -86,4 +86,4 @@ def list_loop(names):
         print("{}. {} ".format(cat_number, cat))
         cat_number += 1
 
-#list_loop(cat_names)11
+list_loop(cat_names)
