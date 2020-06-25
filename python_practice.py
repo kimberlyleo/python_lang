@@ -1,74 +1,51 @@
 
-#COFFEE ORDER IN THE TERMINAL
+# Functions
+# illustrated with examples below
 
-#FINISH ***************************************************************
-# to record orders with multiple coffees i will add them as JSON type obj and and push them into an order array and the final print read, off will map through the array of obj
-#order = []
-    
-def print_message():
-  print("I'm sorry, I did not understand your selection. Please enter the corresponding letter for your response.")
+def dew_point_calc(temp_celsius, relative_humidity_percent):
+    dew_point_temperature = temp_celsius - ((100 - relative_humidity_percent)/5)
+    return dew_point_temperature
 
-def get_size():
-  res = input("What size drink can I get for you? \n[a] Small \n[b] Medium \n[c] Large \n> ")
-  if res == 'a':
-    return 'small'
-  elif res == 'b':
-    return 'medium'
-  elif res == 'c':
-    return 'large'
-  else:
-    print_message()
-    return get_size()
+def submit_to_overlord_Goodburger():
+    user_response = input("Welcome to Goodburger, home of the Goodburger. Would you like a Goodburger? \n\'y\' OR \'n\'\n")
+    if (user_response != "y"):
+        submit_to_overlord_Goodburger()
 
-def get_drink_type():
-  res = input("What type of drink would you like? \n[a] Brewed Coffee \n[b] Mocha \n[c] Latte \n>")
-  if res == "a":
-    drink_type = "Brewed Coffee"
-  elif res == 'b':
-    drink_type = "Mocha"
-  elif res == "c":
-    drink_type = 'Latte'
-  else:
-    print_message()
-    return get_drink_type()
-  return drink_type
+#submit_to_overlord_Goodburger()
 
-def order_latte():
-  res = input("And what kind of milk for your latte? \n[a] 2% milk \n[b] Non-fat milk \n[c] Soy milk \n>")
-  if res == "a":
-    milk_type = "2% milk"
-  elif res == 'b':
-    milk_type = "Non-fat milk"
-  elif res == "c":
-    milk_type = 'Soy milk'
-  else:
-    print_message()
-    return order_latte()
-  return milk_type
+# Loops
 
-def follow_up():
-  res = input("Would you like to order any more beverages? \n[a] Yes \n[b] No")
-  if res == "a":
-    return coffee_bot()
-  else:
-    return print("Great thanks")
-  
-def coffee_bot():
-  print("Welcome to the cafe!")
-  size = get_size()
-  drink_type = get_drink_type()
+def while_loop():
+    while True:
+        print("This will continue to loop until break conditions are met")
+        user_response = int(input("Pick a number between 1 and 5\n"))
+        if (user_response in [1, 2, 3, 4, 5]):
+            break
+    if (user_response % 2 == 0):
+        return "Great job with {}, Even Steven".format(str(user_response))
+    elif (user_response == 1) and (user_response != 5):
+        return "winner winner second place"
+    elif user_response != 5 or user_response != 3:
+        return "this is a pointless conditional to show \'or\' comparison operator"
 
-  if (drink_type == "Latte"):
-    milk_type = order_latte()
-    print("Alright, that's a {} {} with {}!".format(size, drink_type, milk_type))
-  else: 
-    print("Alright, that's a {} {}!".format(size, drink_type))
-  
-  follow_up()
+#print(while_loop())
 
-    name = input("Can I get your name please? \n>")
-    print("Thanks, {}! Your drink will be ready shortly.".format(name))
-  
+def while_counter_runs():
+    counter = 0
+    while (counter < 5):
+        print("Counter value is {}".format(str(counter)))
+        counter += 1
+        #because the counter increases after print statement, counter values printed range from 0 to 4
+        #if the counter increase was above print statement range printed would be 1 to 4
 
-coffee_bot()
+# while_counter_runs()
 
+cat_names = ["Fyodor", "Reggie", "Socks", "Yarnell"]
+
+def list_loop(names):
+    cat_number = 1
+    for cat in names: 
+        print("{}. {} ".format(cat_number, cat))
+        cat_number += 1
+
+#list_loop(cat_names)
