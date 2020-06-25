@@ -159,6 +159,7 @@ dictionary_name["new key"] = "new value"
 accumulated_rain = {'Carlsbad': 2, 'Cloud Forest': 44}
 #print(accumulated_rain['Death Valley']) will return KeyError: 'Death Valley'
 #can set a custom return value for non-existant keys to avoid KeyError (does not mutate the dictionary)
+#get() accepts up to 2 arguments, the second being the default return value
 assert accumulated_rain.get('Death Valley', 0) == 0
 
 assert list(accumulated_rain) == ['Carlsbad', 'Cloud Forest']
