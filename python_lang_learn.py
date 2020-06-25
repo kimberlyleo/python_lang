@@ -1,17 +1,9 @@
-# table of contents
-# syntax- - arithmetic operators, comparison operators, is not is, assignment operators
-# language basics- read top down...
-# dictionaries
-# lists, range(start, end, increment), list() functions for manipulation( del, pop, sort/sorted, count...), slicing [-3:]
-# loops 
-# recursive function example
-
-
 # SYNTAX 
 # Language Basics: PYTHON is an interpretted (not compiled), object oriented, high level, language. their site also says it has dynamic semantics which means how the program's code is executed changes with new information... need to learn more about this and how it works!!
 
 
-# OPERATORS (will add bitwise operators)
+# OPERATORS (will add bitwise operators) -----------------------------------------------------------------
+
 # Arithmetic operators: +, -, *, /, %, **, // (floor division)
 def floor_division(num):
     quotient_rounded_down = num//2
@@ -65,7 +57,8 @@ if "and" not in dance_count:
 # can use 'in' or 'not in' to quickly check if something exists within a given list and return a boolean val
 
 
-# Mathematical Functions
+# Mathematical Functions -----------------------------------------------------------------
+
 # Integers and floats
 #examples showing python's built in number/float functions inc. type conversions 
 #https://www.tutorialspoint.com/python/python_numbers.htm
@@ -88,7 +81,7 @@ assert math.exp(2) == 7.38905609893065
 #math.exp(x) calculates e to the power of x; can be written as (e^x)
 
 
-# Lists
+# Lists-----------------------------------------------------------------
 
 list_of_animals = ["Gorilla" , "Panda", "Tarsier"]
 list_of_animals.append("Leopard Gecko")
@@ -139,7 +132,9 @@ assert oreo_flavors[3] == "Original"
 assert oreo_flavors.pop(2) == "Peanut Butter"
 assert oreo_flavors == ['Mint Chocolate', 'Birthday Cake', 'Original']
 
-# Tuples
+
+# Tuples -----------------------------------------------------------------
+
 # unmutable lists
 tuple_name = ("kim", 28, "San Diego")
 #can unpack a tuple and name all simulataneouslyvariables simulataneously
@@ -147,14 +142,21 @@ name, age, city = tuple_name
 assert name == 'kim'
 assert city == "San Diego"
 
-# Dictionaries
+
+# Dictionaries -----------------------------------------------------------------
+
 #create a new dictionary using the following syntax
 dictionary_name = {"key": "value", "key2": "value2"}
 empty_dictionary = {}
 
-#adding a new key:value pair to dictionary using the following syntax
+#adding a new key: value pair to dictionary using the following syntax
 dictionary_name["new key"] = "new value"
 #print(dictionary_name)
+
+#same syntax for replacing a value using an existing key (hash identifier)
+dictionary_name['key2'] = "newerer value"
+assert dictionary_name == {"key": "value", "key2": "newerer value", 'new key': 'new value'}
+
 
 accumulated_rain = {'Carlsbad': 2, 'Cloud Forest': 44}
 #print(accumulated_rain['Death Valley']) will return KeyError: 'Death Valley'

@@ -1,4 +1,5 @@
-#example variable IMPORT from a local python file**********
+#multiple variable/functions imported from a local .py file "utils" to show syntax:
+
 #from utils import print_message, get_size, order_latte
 
 def coffee_bot():
