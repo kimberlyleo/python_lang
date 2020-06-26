@@ -3,12 +3,13 @@
 # PYTHON is an interpretted (not compiled), object oriented, high level, language. their site also says it has dynamic semantics which means how the program's code is executed changes with new information... need to learn more about this and how it works!!
 
 # Strings/Concatenation
-#python3 is letting me concatenate ints and strings
+#cannot use this concatenation to combine strings with integers or floats; need to coerce using str(int_goes_here)
 example_string = "just add " + "water"
 new_string = example_string + "..."
 assert new_string == "just add water..."
 
 #concatenate with .format() to allow multiple variables to be substituted easily
+#.format() allows concatenation of strings and ints
 gza = "GZA The Genius"
 wu_tang = "Masters of Mind, Body and Verse"
 

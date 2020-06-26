@@ -65,8 +65,24 @@ def operate_on_keys_and_values():
         print("We have {} {}.".format(count, item))
 #here .items() is used on dictionary name to allow handling both keys and values in a function 
 
-operate_on_keys_and_values() 
+# operate_on_keys_and_values() 
 
+def operate_on_values_only():
+    total_inventory = 0
+    for value in shop_inventory.values():
+        total_inventory += value
+    print("Shop-Wide inventory today: {}".format(total_inventory) )
+
+# operate_on_values_only()
+
+
+def add_ten(my_dictionary):
+  for key, value in my_dictionary.items():
+    # value += 10
+    # my_dictionary[key] = value
+    # the code below does the same thing as the commented code, but is written more concisely
+    my_dictionary[key] += 10
+  return my_dictionary
 
 def while_counter_runs():
     counter = 0
