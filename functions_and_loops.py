@@ -84,6 +84,15 @@ def add_ten(my_dictionary):
     my_dictionary[key] += 10
   return my_dictionary
 
+def values_that_are_keys(my_dictionary):
+  values_match = []
+  for value in my_dictionary.values():
+    if value in my_dictionary.keys():
+      values_match.append(value)
+  return values_match
+  #returns a list of values that can also be found as keys
+  #you can treat my_dictionary as a list, using "in" even though it is a dict object
+
 def while_counter_runs():
     counter = 0
     while (counter < 5):
@@ -103,3 +112,21 @@ def list_loop(names):
         cat_number += 1
 
 list_loop(cat_names)
+
+#returns the key of the largest value from a given list
+def max_key(my_dictionary):
+  largest_value = float("-inf") #starting value is as small as possible (-infinity)
+  largest_key = "" #empty string to host the keys that represent the current winner in the loop
+  for key, value in my_dictionary.items(): #iterating over keys and values
+    if value > largest_value: 
+      largest_value = value
+      largest_key = key
+  return largest_key
+
+#takes in a list of words, creates new_dictionary (which is a dictionary where the keys are unique word in words and the values are the frequencies of each word's occurence)
+def frequency_dictionary(words):
+  new_dictionary = {}
+  for word in words:
+    if word not in new_dictionary:
+      new_dictionary[word] = words.count(word)
+  return new_dictionary
