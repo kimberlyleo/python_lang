@@ -1,5 +1,22 @@
 # SYNTAX 
-# Language Basics: PYTHON is an interpretted (not compiled), object oriented, high level, language. their site also says it has dynamic semantics which means how the program's code is executed changes with new information... need to learn more about this and how it works!!
+# Language Basics: 
+# PYTHON is an interpretted (not compiled), object oriented, high level, language. their site also says it has dynamic semantics which means how the program's code is executed changes with new information... need to learn more about this and how it works!!
+
+# Strings/Concatenation
+#cannot use this concatenation to combine strings with integers or floats; need to coerce using str(int_goes_here)
+example_string = "just add " + "water"
+new_string = example_string + "..."
+assert new_string == "just add water..."
+
+#concatenate with .format() to allow multiple variables to be substituted easily
+#.format() allows concatenation of strings and ints
+gza = "GZA The Genius"
+wu_tang = "Masters of Mind, Body and Verse"
+
+def wu_love(why_you_love, favorite_member):
+    print("I love the Wu Tang Clan because they are {}. My favorite member is {}.".format(why_you_love, favorite_member))
+#wu_love(wu_tang, gza)
+
 
 
 # OPERATORS (will add bitwise operators) -----------------------------------------------------------------

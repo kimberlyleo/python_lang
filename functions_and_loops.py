@@ -62,21 +62,46 @@ def operate_on_keys_only():
 
 def operate_on_keys_and_values():
     for item, count in shop_inventory.items():
-        print("We have {} {}.".format(str(count), item))
+        print("We have {} {}.".format(count, item))
 #here .items() is used on dictionary name to allow handling both keys and values in a function 
 
-#operate_on_keys_and_values() 
+# operate_on_keys_and_values() 
 
+def operate_on_values_only():
+    total_inventory = 0
+    for value in shop_inventory.values():
+        total_inventory += value
+    print("Shop-Wide inventory today: {}".format(total_inventory) )
+
+# operate_on_values_only()
+
+
+def add_ten(my_dictionary):
+  for key, value in my_dictionary.items():
+    # value += 10
+    # my_dictionary[key] = value
+    # the code below does the same thing as the commented code, but is written more concisely
+    my_dictionary[key] += 10
+  return my_dictionary
+
+def values_that_are_keys(my_dictionary):
+  values_match = []
+  for value in my_dictionary.values():
+    if value in my_dictionary.keys():
+      values_match.append(value)
+  return values_match
+  #returns a list of values that can also be found as keys
+  #you can treat my_dictionary as a list, using "in" even though it is a dict object
 
 def while_counter_runs():
     counter = 0
     while (counter < 5):
-        print("Counter value is {}".format(str(counter)))
+        print("Counter value is {}".format(counter))
         counter += 1
         #because the counter increases after print statement, counter values printed range from 0 to 4
         #if the counter increase was above print statement range printed would be 1 to 4
 
-# while_counter_runs()
+while_counter_runs()
 
 cat_names = ["Fyodor", "Reggie", "Socks", "Yarnell"]
 
@@ -86,4 +111,22 @@ def list_loop(names):
         print("{}. {} ".format(cat_number, cat))
         cat_number += 1
 
-#list_loop(cat_names)11
+list_loop(cat_names)
+
+#returns the key of the largest value from a given list
+def max_key(my_dictionary):
+  largest_value = float("-inf") #starting value is as small as possible (-infinity)
+  largest_key = "" #empty string to host the keys that represent the current winner in the loop
+  for key, value in my_dictionary.items(): #iterating over keys and values
+    if value > largest_value: 
+      largest_value = value
+      largest_key = key
+  return largest_key
+
+#takes in a list of words, creates new_dictionary (which is a dictionary where the keys are unique word in words and the values are the frequencies of each word's occurence)
+def frequency_dictionary(words):
+  new_dictionary = {}
+  for word in words:
+    if word not in new_dictionary:
+      new_dictionary[word] = words.count(word)
+  return new_dictionary
